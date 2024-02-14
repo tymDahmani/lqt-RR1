@@ -21,7 +21,7 @@ public class strategy1farLeftSpike {
                 .waitSeconds(4) // drop pixel
 //                .setTangent(Math.PI)
 //                .splineTo(new Vector2d(-52.75, -11.5), Math.PI)
-                .turn(Math.PI / 3)
+                .turn(5 * Math.PI / 3)
                 .strafeTo(new Vector2d(-35.5, -11.5))
                 .setTangent(Math.PI)
                         .lineToX(-52.75)

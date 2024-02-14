@@ -6,7 +6,7 @@ import com.noahbres.meepmeep.MeepMeep;
 import com.noahbres.meepmeep.roadrunner.DefaultBotBuilder;
 import com.noahbres.meepmeep.roadrunner.entity.RoadRunnerBotEntity;
 
-public class closeLeftSpike {
+public class closeMidSpike {
 
     public static void main(String[] args) {
         MeepMeep meepMeep = new MeepMeep(500);
@@ -17,7 +17,7 @@ public class closeLeftSpike {
                 .build();
 
         myBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(12, -61, Math.PI / 2))
-                .lineToYLinearHeading(-47, 2 * Math.PI / 3) // was -53.75
+                .lineToY(-47) // was -53.75
                 .waitSeconds(4)
                 .setTangent(2 * Math.PI)
                 .strafeToLinearHeading(new Vector2d(35.5, -35.5), 2 * Math.PI)
