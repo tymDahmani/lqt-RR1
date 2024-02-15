@@ -113,9 +113,9 @@ public class closeAutoTrajectoryTest2 extends LinearOpMode {
 
             // put pixel on spike mark
             openArm();
-            gripperL.setPosition(0);
+            gripperR.setPosition(0);
             sleep(1000);
-            gripperL.setPosition(1);
+            gripperR.setPosition(1);
 
             sleep(1000);
 
@@ -137,17 +137,21 @@ public class closeAutoTrajectoryTest2 extends LinearOpMode {
 
 
             // drop pixel
-            gripperR.setPosition(0);
+            gripperL.setPosition(0);
 
             sleep(2000);
 
             // close gripper
-            gripperR.setPosition(1);
+            gripperL.setPosition(1);
 
             sleep(500);
 
             // arm position to closed
             closeArm();
+
+            sleep(1000);
+
+            closingFull();
 
             sleep(1000);
 
@@ -182,9 +186,9 @@ public class closeAutoTrajectoryTest2 extends LinearOpMode {
 
             // put pixel on spike mark
             openArm();
-            gripperL.setPosition(0);
+            gripperR.setPosition(0);
             sleep(1000);
-            gripperL.setPosition(1);
+            gripperR.setPosition(1);
 
             sleep(1000);
 
@@ -206,17 +210,21 @@ public class closeAutoTrajectoryTest2 extends LinearOpMode {
 
 
             // drop pixel
-            gripperR.setPosition(0);
+            gripperL.setPosition(0);
 
             sleep(2000);
 
             // close gripper
-            gripperR.setPosition(1);
+            gripperL.setPosition(1);
 
             sleep(500);
 
             // arm position to closed
             closeArm();
+
+            sleep(1000);
+
+            closingFull();
 
             sleep(1000);
 
@@ -253,9 +261,9 @@ public class closeAutoTrajectoryTest2 extends LinearOpMode {
 
             // put pixel on spike mark
             openArm();
-            gripperL.setPosition(0);
+            gripperR.setPosition(0);
             sleep(1000);
-            gripperL.setPosition(1);
+            gripperR.setPosition(1);
 
             sleep(1000);
 
@@ -277,17 +285,21 @@ public class closeAutoTrajectoryTest2 extends LinearOpMode {
 
 
             // drop pixel
-            gripperR.setPosition(0);
+            gripperL.setPosition(0);
 
             sleep(2000);
 
             // close gripper
-            gripperR.setPosition(1);
+            gripperL.setPosition(1);
 
             sleep(500);
 
             // arm position to closed
             closeArm();
+
+            sleep(1000);
+
+            closingFull();
 
             sleep(1000);
 
@@ -345,6 +357,12 @@ public class closeAutoTrajectoryTest2 extends LinearOpMode {
         armBase.setTargetPosition(ticks);
         armBase.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         armBase.setPower(power);
+    }
+
+    void closingFull() {
+        ArmBase(0, 0.5);
+        gripperArm(0, 0.2);
+
     }
 
 }
