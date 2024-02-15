@@ -1,6 +1,5 @@
 package org.firstinspires.ftc.teamcode.testingTrajectories2;
 
-import com.acmerobotics.roadrunner.ParallelAction;
 import com.acmerobotics.roadrunner.Pose2d;
 import com.acmerobotics.roadrunner.Vector2d;
 import com.acmerobotics.roadrunner.ftc.Actions;
@@ -19,21 +18,8 @@ import org.openftc.easyopencv.OpenCvCamera;
 import org.openftc.easyopencv.OpenCvCameraFactory;
 import org.openftc.easyopencv.OpenCvCameraRotation;
 
-/*
-trajectory strategy:
-start pose: new Pose2d(12, -61, Math.PI / 2)
-                .lineToY(-47) // was -53.75
-                .waitSeconds(4)
-                .setTangent(2 * Math.PI)
-                .strafeToLinearHeading(new Vector2d(47, -35.5), 2 * Math.PI)
-                .waitSeconds(4)
-                .strafeTo(new Vector2d(47, -60))
-                .setTangent(2 * Math.PI)
-                .lineToX(60)
-
- */
 @Autonomous
-public class closeAutoTrajectoryTest2 extends LinearOpMode {
+public class finalFullFarAuto extends LinearOpMode {
 
     blobDetectionTest detector = new blobDetectionTest(telemetry);
     OpenCvCamera webCam;
