@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode.testingTrajectories2;
+package org.firstinspires.ftc.teamcode.testingTrajectories2.finalCodes;
 
 import com.acmerobotics.roadrunner.Pose2d;
 import com.acmerobotics.roadrunner.Vector2d;
@@ -17,7 +17,7 @@ import org.firstinspires.ftc.teamcode.tuning.TuningOpModes;
 
 @Autonomous
 
-public final class red_far_leftMalek extends LinearOpMode {
+public final class blue_far_leftMalek extends LinearOpMode {
     // slides
     DcMotor slideL;
     DcMotor slideR;
@@ -64,19 +64,19 @@ public final class red_far_leftMalek extends LinearOpMode {
         gripperL.setPosition(1);
 
         waitForStart();
-        Pose2d beginPose = new Pose2d(-35, -60, Math.PI / 2);
+        Pose2d beginPose = new Pose2d(-35, 60, Math.PI / 2);
         if (TuningOpModes.DRIVE_CLASS.equals(MecanumDrive.class)) {
             MecanumDrive drive = new MecanumDrive(hardwareMap, beginPose);
 
-            Open_Tilting();
-            sleep(500);
             GripperArm(540, 0.2);
+            sleep(500);
+            tilting.setPosition(0.8);
 
 
             Actions.runBlocking(
                     drive.actionBuilder(beginPose)
 
-                            .splineToLinearHeading(new Pose2d(-35, -54, 2.094395), 0)
+                            .splineToLinearHeading(new Pose2d(-35, 54, 2.094395), 0)
 
                             .waitSeconds(1)
                             .build());
@@ -85,21 +85,24 @@ public final class red_far_leftMalek extends LinearOpMode {
 //            ArmBase(20, 0.5);
 //            sleep(2000);
 
-//            sleep(2000);
-            tilting.setPosition(1);
-            sleep(1000);
             gripperR.setPosition(0);
             sleep(500);
 
+            GripperArm(10, 0.2);
+            ArmBase(230,0.5);
             gripperR.setPosition(1);
-            sleep(500);
 
+            sleep(1000);
+
+            tilting.setPosition(0.7);
 
             Actions.runBlocking(
-                    drive.actionBuilder(new Pose2d(-35, -54, 2.094395))
-                            .splineTo(new Vector2d(-10, -10), 2 * Math.PI)
-                            .strafeTo(new Vector2d(20, -10))
-                            .splineTo(new Vector2d(45, -30), 2 * Math.PI)
+                    drive.actionBuilder(new Pose2d(-35, 54, 2.094395))
+                            .turnTo(Math.PI / 2)
+                            .lineToYSplineHeading(15,2 * Math.PI)
+
+                            .strafeTo(new Vector2d(20, 10))
+                            .splineTo(new Vector2d(45, 15), 2 * Math.PI)
 //                            .splineToLinearHeading(new Pose2d(-40, -35.5, 1 * Math.PI), 0)
 //                            .waitSeconds(2)
                             .build());
@@ -114,12 +117,17 @@ public final class red_far_leftMalek extends LinearOpMode {
             sleep(500);
             gripperL.setPosition(1);
 
-            GripperArm(0, 0.2);
+            GripperArm(10, 0.2);
             sleep(500);
 
             ArmBase(0, 0.5);
-            sleep(2000);
 
+
+            Actions.runBlocking(
+                    drive.actionBuilder(new Pose2d(48, 15, 2 * Math.PI))
+
+                            .strafeTo(new Vector2d(55, 15))
+                            .build());
 
 
         }
