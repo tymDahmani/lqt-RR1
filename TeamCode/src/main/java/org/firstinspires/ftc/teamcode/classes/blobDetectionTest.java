@@ -16,8 +16,7 @@ public class blobDetectionTest extends OpenCvPipeline {
 
     public Telemetry telemetry;
 
-    List<Integer> TP_COLOR = Arrays.asList(255, 0, 0); //(red, green, blue)
-
+    static List<Integer> TP_COLOR = Arrays.asList(255, 0, 0); //(red, green, blue)
 
     public static int tp_zone = 2;
     int toggleShow = 1;
@@ -115,13 +114,17 @@ public class blobDetectionTest extends OpenCvPipeline {
         return Math.sqrt(Math.pow((r1 - r2), 2) + Math.pow((g1 - g2), 2) + Math.pow((b1 - b2), 2));
     }
 
-    public void setAlliancePipe(String alliance){
+    public static void setAlliancePipe(String alliance){
         if (alliance.equals("red")){
             TP_COLOR = Arrays.asList(255, 0, 0);
         }else{
             TP_COLOR = Arrays.asList(0, 0, 255);
         }
     }
+
+//    public static String getAlliance() {
+//        return alliance;
+//    }
 
     public static double getMaxDistance(){
         return max_distance;
