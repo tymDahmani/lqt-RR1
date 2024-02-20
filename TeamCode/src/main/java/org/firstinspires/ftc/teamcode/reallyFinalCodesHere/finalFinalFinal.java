@@ -4,14 +4,18 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.classes.blobDetectionTest;
 
+import org.firstinspires.ftc.teamcode.testingTrajectories.farAutoTrajectoryTest1;
+
 public class finalFinalFinal extends LinearOpMode {
+
+
+    int side = 0;
+    String curAlliance = null;
+    blobDetectionTest detector;
+    farAutoTrajectoryTest1 testCode;
+
     @Override
     public void runOpMode() throws InterruptedException {
-
-        int side = 0;
-        String curAlliance = null;
-        blobDetectionTest detector;
-
 
         while (!opModeIsActive() && !isStopRequested()){
 
@@ -33,12 +37,14 @@ public class finalFinalFinal extends LinearOpMode {
             telemetry.addData("Select Side (Gamepad1 DPad left = Far, Gamepad1 DPad right = Close)", "");
             telemetry.addData("Current Side Selected : ", side);
             telemetry.addData("", "");
-
             telemetry.update();
+
+
 
         }
 
         // here will go our class for each alliance and side (far and left)
+
 
 
     }
